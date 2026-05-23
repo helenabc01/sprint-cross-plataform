@@ -37,7 +37,7 @@ Funcionário de campo que passa a maior parte do turno dirigindo pela malha viá
 * Painel de malha viária indicando exatamente a proporção de trechos saudáveis, em atenção ou críticos.
 * Filtros e visão clara de quantos metros ou quilômetros da rodovia precisam de intervenção.
 
-## 📋 Requisitos Principais
+## Requisitos Principais
 
 ### Funcionais
 - Upload de vídeos
