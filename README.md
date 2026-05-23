@@ -58,7 +58,7 @@ Para facilitar a triagem e o envio das equipes de manutenção, a inteligência 
 * 🟠 **Médio (Atenção):** A vegetação está crescendo (ex: atingindo 2,6m) e o trecho precisa entrar no radar de manutenção futura.
 * 🔴 **Alto (Crítico):** A grama está alta o suficiente para gerar riscos operacionais (esconder placas, reduzir visibilidade ou encobrir animais). Exige ação imediata de roçada.
 
-## ProtÓtipo figma
+## Protótipo figma
 https://www.figma.com/design/lVJExT1IOtFD2HEJTX9F85/Challenge-Motiva?node-id=163-384&t=AWaV78ic9flHe7Vu-1
 
 # Integrantes
