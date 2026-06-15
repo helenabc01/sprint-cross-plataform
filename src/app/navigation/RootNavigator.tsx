@@ -1,6 +1,6 @@
-import { LoadPage } from "../../screens/Splash ";
-import React from "react";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { LoadPage } from "../../screens/Splash ";
+import LoginPage from "../../screens/LoginScreen";
 
 const Stack = createNativeStackNavigator();
 
@@ -12,6 +12,8 @@ export function RootNavigator() {
       }}
     >
       <Stack.Screen name="Load" component={LoadPage} />
+
+      <Stack.Screen name="Login" component={LoginPage} />
     </Stack.Navigator>
   );
 }
