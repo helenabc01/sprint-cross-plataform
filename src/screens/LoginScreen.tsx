@@ -13,8 +13,17 @@ import {
   Image,
 } from "react-native";
 import { colors } from "../assets/colors";
+import { useNavigation } from "@react-navigation/native";
+import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 
 const { width } = Dimensions.get("window");
+
+type RootStackParamList = {
+  Login: undefined;
+  ForgotPassword: undefined;
+  VerifyCode: undefined;
+  AppNavidation: undefined; // ← era Main
+};
 
 function MotivaLogo() {
   return (
@@ -27,6 +36,7 @@ function MotivaLogo() {
     </View>
   );
 }
+
 function GreenVBadge() {
   return (
     <View style={styles.logoRow}>
@@ -42,6 +52,9 @@ function GreenVBadge() {
 export default function LoginPage() {
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
+
+  const navigation =
+    useNavigation<NativeStackNavigationProp<RootStackParamList>>();
 
   return (
     <SafeAreaView style={styles.safe}>
@@ -78,11 +91,18 @@ export default function LoginPage() {
               onChangeText={setSenha}
             />
 
-            <TouchableOpacity style={styles.forgotWrapper}>
+            <TouchableOpacity
+              style={styles.forgotWrapper}
+              onPress={() => navigation.navigate("ForgotPassword")}
+            >
               <Text style={styles.forgotText}>Esqueceu a senha?</Text>
             </TouchableOpacity>
 
-            <TouchableOpacity style={styles.button} activeOpacity={0.85}>
+            <TouchableOpacity
+              style={styles.button}
+              activeOpacity={0.85}
+              onPress={() => navigation.replace("AppNavidation")}
+            >
               <Text style={styles.buttonText}>ENTRAR</Text>
             </TouchableOpacity>
           </View>
@@ -93,7 +113,6 @@ export default function LoginPage() {
           onPress={() => Linking.openURL("https://www.motiva.com.br/noticias/")}
         >
           <Text style={styles.newsIcon}>📰</Text>
-
           <Text style={styles.newsText}>Ver últimas notícias</Text>
         </TouchableOpacity>
       </ImageBackground>
@@ -113,14 +132,12 @@ const styles = StyleSheet.create({
     backgroundColor: colors.white,
     overflow: "hidden",
   },
-
   decorLine: {
     position: "absolute",
     width: 2,
     backgroundColor: colors.secondary,
     borderRadius: 4,
   },
-
   card: {
     width: width * 0.82,
     backgroundColor: colors.wWhite,
@@ -133,7 +150,6 @@ const styles = StyleSheet.create({
     shadowRadius: 16,
     elevation: 6,
   },
-
   logoArea: {
     alignItems: "center",
     marginBottom: 32,
@@ -143,7 +159,6 @@ const styles = StyleSheet.create({
     alignItems: "center",
     marginBottom: 8,
   },
-
   logo: {
     width: 150,
     height: 50,
@@ -183,7 +198,6 @@ const styles = StyleSheet.create({
     fontWeight: "700",
     letterSpacing: 1.2,
   },
-
   newsWrapper: {
     flexDirection: "row",
     alignItems: "center",
